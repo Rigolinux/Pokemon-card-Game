@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import pokeapi from "@/api/pokemonApi";
-const getPokemons = () => {
+export const getPokemons = () => {
   const pokemonsArray = Array.from(Array(500));
 
   return pokemonsArray.map((_, index) => index + 1);
@@ -14,7 +14,7 @@ const getPokemonOptions = async() => {
     return pokemonwithname;
   
 };
-const getPokemonNames = async([a,b,c,d]=[]) => {
+export const getPokemonNames = async([a,b,c,d]=[]) => {
     //send all requests at once
     const pokemonNames = [];
     const promises = [a,b,c,d].map(id => pokeapi.get(`/${id}`));
